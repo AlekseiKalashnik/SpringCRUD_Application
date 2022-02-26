@@ -1,11 +1,11 @@
-package ru.alishev.springcourse.controllers;
+package crud_app.controllers;
 
+import crud_app.dao.PersonDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import ru.alishev.springcourse.dao.PersonDAO;
-import ru.alishev.springcourse.models.Person;
+import crud_app.models.Person;
 
 @Controller
 @RequestMapping("/people")

@@ -1,7 +1,7 @@
-package ru.alishev.springcourse.dao;
+package crud_app.dao;
 
 import org.springframework.stereotype.Component;
-import ru.alishev.springcourse.models.Person;
+import crud_app.models.Person;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package ru.alishev.springcourse.models;
+package crud_app.models;
 
 public class Person {
     private int id;

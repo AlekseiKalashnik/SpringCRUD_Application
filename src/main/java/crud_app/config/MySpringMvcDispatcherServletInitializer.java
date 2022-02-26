@@ -1,4 +1,4 @@
-package ru.alishev.springcourse.config;
+package crud_app.config;
 
 import org.springframework.web.filter.HiddenHttpMethodFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
