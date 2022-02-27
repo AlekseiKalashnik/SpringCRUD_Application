@@ -1,14 +1,13 @@
 package crud_app.models;
 
-public class Person {
+public class CartoonCharacter {
     private int id;
     private String name;
 
-    public Person() {
-
+    public CartoonCharacter() {
     }
 
-    public Person(int id, String name) {
+    public CartoonCharacter(int id, String name) {
         this.id = id;
         this.name = name;
     }
