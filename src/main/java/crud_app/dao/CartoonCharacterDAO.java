@@ -14,11 +14,11 @@ public class CartoonCharacterDAO {
     {
         characters = new ArrayList<>();
 
-        characters.add(new CartoonCharacter(++CHARACTERS_COUNT, "Bugs Bunny"));
-        characters.add(new CartoonCharacter(++CHARACTERS_COUNT, "Homer Simpson"));
-        characters.add(new CartoonCharacter(++CHARACTERS_COUNT, "Mickey Mouse"));
-        characters.add(new CartoonCharacter(++CHARACTERS_COUNT, "Winnie the Pooh"));
-        characters.add(new CartoonCharacter(++CHARACTERS_COUNT, "Scooby-Doo"));
+        characters.add(new CartoonCharacter(++CHARACTERS_COUNT, "Bugs Bunny", 20, "Looney Tuns"));
+        characters.add(new CartoonCharacter(++CHARACTERS_COUNT, "Homer Simpson", 45, "Simpsons"));
+        characters.add(new CartoonCharacter(++CHARACTERS_COUNT, "Mickey Mouse", 16, "Disney"));
+        characters.add(new CartoonCharacter(++CHARACTERS_COUNT, "Winnie the Pooh", 15, "Adventure with Winnie the Pooh"));
+        characters.add(new CartoonCharacter(++CHARACTERS_COUNT, "Scooby-Doo", 10, "Scooby-Doo"));
     }
 
     public List<CartoonCharacter> index() {
@@ -41,6 +41,8 @@ public class CartoonCharacterDAO {
         CartoonCharacter characterToBeUpdated = show(id);
 
         characterToBeUpdated.setName(updatedCharacter.getName());
+        characterToBeUpdated.setAge(updatedCharacter.getAge());
+        characterToBeUpdated.setCartoonName(updatedCharacter.getCartoonName());
     }
 
     public void delete(int id) {

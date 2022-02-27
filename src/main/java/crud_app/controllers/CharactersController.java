@@ -4,8 +4,10 @@ import crud_app.dao.CartoonCharacterDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import crud_app.models.CartoonCharacter;
+import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/characters")
@@ -36,7 +38,11 @@ public class CharactersController {
     }
 
     @PostMapping()
-    public String create(@ModelAttribute("character") CartoonCharacter character) {
+    public String create(@ModelAttribute("character") @Valid CartoonCharacter character,
+                         BindingResult bindingResult) {
+        if(bindingResult.hasErrors())
+            return "characters/new";
+
         characterDAO.save(character);
         return "redirect:/characters";
     }
@@ -48,7 +54,11 @@ public class CharactersController {
     }
 
     @PatchMapping("/{id}")
-    public String update(@ModelAttribute("character") CartoonCharacter character, @PathVariable("id") int id) {
+    public String update(@ModelAttribute("character") @Valid CartoonCharacter character,
+                         BindingResult bindingResult, @PathVariable("id") int id) {
+        if(bindingResult.hasErrors())
+            return "characters/edit";
+
         characterDAO.update(id, character);
         return "redirect:/characters";
     }
